@@ -6,10 +6,11 @@ import { QuoteData } from '../../App.interface'
 
 interface QuoteCardProps {
   quoteData: QuoteData
+  updateVote: (quote: string) => void
 }
 
-const QuoteCard = ({quoteData}: QuoteCardProps) => (
-  <Card>
+const QuoteCard = ({quoteData, updateVote}: QuoteCardProps) => (
+  <Card onPress={() => updateVote(quoteData.quote)}>
     <Row>
       <View>
         <Text>Movie: {quoteData.movie}</Text>
