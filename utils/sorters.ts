@@ -7,7 +7,6 @@ export const sortByVotesBestToWorst = (allQuotes: QuoteData[]): QuoteData[] => {
 
 export const sortByVotesWorstToBest = (allQuotes: QuoteData[]): QuoteData[] => {
   const sortedByVotes = allQuotes.sort((a, b) => a.upvotes - b.upvotes)
-  console.log(sortedByVotes)
   return sortedByVotes
 }
 
