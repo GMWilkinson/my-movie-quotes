@@ -5,6 +5,12 @@
 - Hardly any UI
 - I tried to make it with the idea of "dumb" components that didn't do any logic
 - I misread the brief and have not made it persist states when app is fully closed, state will persist while app is active in the background but not when closed. The only way I could think of doing that without using a server would be with Storage and that feels pointless now that time has already run out
+- It checks whether a quote has already been added and shows a message if it has, should be BE
+- Can view all added quotes or just your own. The "all quotes" are mock data
+  
+<img width="312" alt="Screenshot 2024-02-10 at 14 25 34" src="https://github.com/GMWilkinson/my-movie-quotes/assets/43377488/21a0d315-cf8c-473b-82ac-177c4d95d286">
+
+
 
 ## 🚀 How to use
 
