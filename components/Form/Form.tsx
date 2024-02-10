@@ -1,17 +1,16 @@
-import { Button, TextInput, NativeSyntheticEvent, TextInputChangeEventData } from 'react-native'
+import { Button, TextInput } from 'react-native'
 import Card from '../../styled-components/Card'
-import Row from '../../styled-components/Row'
 
 import { QuoteData } from '../../App.interface'
-import { useState, SetStateAction } from 'react'
 
 interface FormProps {
   formValues: QuoteData
   handleFormChange: any
+  hasUserName: boolean
   saveQuote: () => void
 }
 
-const Form = ({handleFormChange, saveQuote, formValues}: FormProps) => {
+const Form = ({handleFormChange, saveQuote, formValues, hasUserName}: FormProps) => {
   return (
     <>
       <Card>
@@ -30,14 +29,16 @@ const Form = ({handleFormChange, saveQuote, formValues}: FormProps) => {
           style={{width: 200}}
         />
       </Card>
-      <Card>
-        <TextInput 
-          placeholder="Username"
-          value={formValues.createdBy}
-          onChangeText={(value) => handleFormChange('createdBy', value)}
-          style={{width: 200}}
-        />
-      </Card>
+      {!hasUserName ? (
+        <Card>
+          <TextInput 
+            placeholder="Username"
+            value={formValues.createdBy}
+            onChangeText={(value) => handleFormChange('createdBy', value)}
+            style={{width: 200}}
+          />
+        </Card>
+      ) : null}
       <Button title="Save" onPress={saveQuote} />
     </>
   )

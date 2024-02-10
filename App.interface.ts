@@ -3,4 +3,5 @@ export interface QuoteData {
   movie: string
   createdBy: string
   upvotes: number
+  timestamp: number
 }
