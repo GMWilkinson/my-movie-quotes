@@ -7,7 +7,7 @@ export const allQuotes = [
     upvotes: 3
   },
   {
-    quote: 'I\'\ll make him an offer he can\'\t refuse',
+    quote: 'I\'ll make him an offer he can\'t refuse',
     movie: 'The Godfather',
     createdBy: 'Bob',
     upvotes: 22

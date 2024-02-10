@@ -1,9 +1,10 @@
 
 import { useState } from 'react'
 import styled from 'styled-components'
-import { Text, View, FlatList } from 'react-native'
+import { Text, View, FlatList,  } from 'react-native'
 
 import { allQuotes } from './mock-data/allQuotes'
+import QuoteCard from './components/QuoteCard'
 
 const Page = styled(View)`
   flex: 1;
@@ -11,27 +12,13 @@ const Page = styled(View)`
   alignItems: center;
   justifyContent: center;
   padding-vertical: 60px;
-  padding-horizontal: 16px;
+  padding-horizontal: 8px;
 `
 
 const Heading = styled(Text)`
   padding: 8px;
   font-size: 24px;
 `
-
-const Card = styled(View)`
-  font-size: 18px;
-  border-radius: 8px;
-  backgroundColor: #fff;
-  padding: 16px;
-  margin-vertical: 8px;
-`
-
-const Item = ({quote}) => (
-  <Card>
-    <Text>{quote}</Text>
-  </Card>
-)
 
 const App = () => {
   const [allCurrentQuotes, setAllCurrentQuotes] = useState(allQuotes)
@@ -40,7 +27,7 @@ const App = () => {
       <Heading>My Favourite Movie Quotes</Heading>
       <FlatList
         data={allCurrentQuotes}
-        renderItem={({item}) => <Item quote={item.quote} />}
+        renderItem={({item}) => <QuoteCard quoteData={item} />}
         keyExtractor={item => item.quote}
       />
     </Page>
