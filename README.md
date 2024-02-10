@@ -2,6 +2,7 @@
 
 - Made using `create-react-native-app` <a href="https://github.com/expo/create-react-native-app">Create React Native App</a>
 - Uses Expo so you will not have to install Pods every 10 minutes
+- I'm not very happy with it
 - I tried to make it with the idea of "dumb" components that didn't do any logic
 - It checks whether a quote has already been added and shows a message if it has, should be BE
 - Can view all added quotes or just your own. The "all quotes" are mock data
