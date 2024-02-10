@@ -61,7 +61,15 @@ const App = () => {
     })
   }
 
-  console.log('flonk', allCurrentQuotes)
+  const updateVote = (quote: string) => {
+    const updateVoteCount = allCurrentQuotes.map(currentQuote => {
+      if (currentQuote.quote === quote) {
+          return { ...currentQuote, upvotes: currentQuote.upvotes + 1 };
+      }
+      return currentQuote;
+    })
+    setAllCurrentQuotes(updateVoteCount)
+  }
 
   return (
     <Page>
@@ -98,13 +106,13 @@ const App = () => {
       {showMyQuotes ? (
         <FlatList
           data={currentUserQuotes}
-          renderItem={({item}) => <QuoteCard quoteData={item} />}
+          renderItem={({item}) => <QuoteCard quoteData={item} updateVote={updateVote} />}
           keyExtractor={item => item.quote}
         />
       ) : (
         <FlatList
           data={allCurrentQuotes}
-          renderItem={({item}) => <QuoteCard quoteData={item} />}
+          renderItem={({item}) => <QuoteCard quoteData={item} updateVote={updateVote} />}
           keyExtractor={item => item.quote}
         />
       )}

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { View } from 'react-native'
+import { Pressable } from 'react-native'
 
-const Card = styled(View)`
+const Card = styled(Pressable)`
   font-size: 18px;
   border-radius: 8px;
   backgroundColor: #fff;
