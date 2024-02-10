@@ -8,7 +8,11 @@ import QuoteCard from './components/QuoteCard'
 import Form from './components/Form'
 import Heading from './styled-components/Heading'
 import { QuoteData } from './App.interface'
-import { sortByVotesBestToWorst, sortByVotesWorstToBest, sortByNewestToOldest, sortByOldestToNewest } from './utils/sorters'
+import { 
+  sortByVotesBestToWorst, 
+  sortByVotesWorstToBest, 
+  sortByNewestToOldest, 
+  sortByOldestToNewest } from './utils/sorters'
 import { filterByUser } from './utils/filters'
 import Card from './styled-components/Card'
 
@@ -36,11 +40,11 @@ const App = () => {
     timestamp: 0
   })
 
+  const currentUserQuotes = filterByUser(allCurrentQuotes, userName)
+
   const handleFormChange = (name: string, value: string) => {
     setFormValues({ ...formValues, [name]: value })
   }
-
-  const currentUserQuotes = filterByUser(allCurrentQuotes, userName)
 
   const saveQuote = () => {
     const doesQuoteAlreadyExist = allCurrentQuotes.find(
